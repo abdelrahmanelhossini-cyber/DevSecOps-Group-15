@@ -11,7 +11,7 @@ on:
           - 'prod'
       
 jobs:
-  build:
+  dev:
     if: inputs.env == 'dev'
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +29,7 @@ jobs:
 
       - name: Read file
         run: cat message.txt
-  build:
+  prod:
     if: inputs.env == 'prod'
     runs-on: ubuntu-latest
     steps:
