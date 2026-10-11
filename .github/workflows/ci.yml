@@ -1,12 +1,17 @@
+
 name: abdelrahmanelhossinii
-run-name: abdelrahmanelhossinii ${{ github.run_number }}
+
+run-name: abdelrahmanelhossinii-${{ github.run_number }}
+
 on:
-  -push:
-  -pull_request:
-  -workflow_dispatch:
+  push:
+  pull_request:
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -16,6 +21,5 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: excute script
-        run: |
-          python3 abdelrahmanelhossini/task-2/calculator.py
+      - name: Execute script
+        run: python3 abdelrahmanelhossini/task-2/calculator.py
